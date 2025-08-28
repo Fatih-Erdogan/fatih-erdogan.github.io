@@ -17,6 +17,23 @@
     .email { font-weight: 600; margin: 6px 0 10px; }
     .card { border: 1px solid #e8e8e8; border-radius: 14px; padding: 18px; margin: 16px 0; }
     footer { text-align: center; color: #777; padding: 40px 0; }
+
+    /* Publication layout */
+    .pub-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .pub-item img {
+      max-width: 140px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .pub-details {
+      flex: 1;
+    }
   </style>
 </head>
 <body>
@@ -49,13 +66,14 @@
 
     <section class="card">
       <h2>Publications</h2>
-      <ul>
-        <li>
+      <div class="pub-item">
+        <img src="figs/mapping-like-skeptic.png" alt="Mapping like a Skeptic preview" />
+        <div class="pub-details">
           <strong>Mapping like a Skeptic: Probabilistic BEV Projection for Online HD Mapping</strong><br />
           Fatih Erdoğan, Merve Rabia Barın, Fatma Güney<br />
           <em>British Machine Vision Conference (BMVC), 2025</em>
-        </li>
-      </ul>
+        </div>
+      </div>
     </section>
   </main>
 
