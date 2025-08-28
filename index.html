@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fatih Erdoğan</title>
+  <meta name="description" content="Personal site of Fatih Erdoğan" />
+  <style>
+    :root { --w: 780px; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; }
+    header { padding: 56px 20px 20px; text-align: center; }
+    h1 { margin: 0 0 6px; font-size: 2rem; }
+    .tagline { color: #666; margin: 0 0 16px; }
+    main { max-width: var(--w); margin: 0 auto; padding: 20px; line-height: 1.7; }
+    a { text-decoration: none; }
+    .links a { margin: 0 10px; }
+    .card { border: 1px solid #e8e8e8; border-radius: 14px; padding: 18px; margin: 16px 0; }
+    footer { text-align: center; color: #777; padding: 40px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Fatih Erdoğan</h1>
+    <p class="tagline">Computer Engineering • Deep Learning • Data/Trading</p>
+    <p class="links">
+      <a href="https://github.com/Fatih-Erdogan">GitHub</a> ·
+      <a href="#" id="email">Email</a> ·
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>About</h2>
+      <p>
+        Short bio here. Mention current focus (e.g., AI/ML projects, research, and engineering interests).
+        Replace this text with a 2–3 sentence intro.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Project Name</strong> — one-line summary. <a href="https://github.com/Fatih-Erdogan/REPO">Code</a></li>
+        <li><strong>Another Project</strong> — brief description. <a href="https://github.com/Fatih-Erdogan/REPO2">Code</a></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Publications / Writing</h2>
+      <ul>
+        <li><em>Title</em> — venue/year. <a href="#">PDF</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>© <span id="y"></span> Fatih Erdoğan</footer>
+
+  <script>
+    // convenience: fill year & simple email without bots scraping plain text
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const user = "me"; const host = "example.com"; // ← change these
+    document.getElementById('email').href = `mailto:${user}@${host}`;
+    document.getElementById('email').textContent = `${user}@${host}`;
+  </script>
+</body>
+</html>
+
