@@ -1,0 +1,19 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+._*
+
+# Editor files
+*.swp
+*.swo
+*.tmp
+*.log
+
+# Node / build artifacts (only if you ever use tooling)
+node_modules/
+dist/
+build/
+
