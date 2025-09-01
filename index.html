@@ -37,34 +37,35 @@
     .pub-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
+      gap: 6px;
+      margin-top: 8px;
     }
     .btn {
       display: inline-block;
-      padding: 8px 12px;
-      border: 1px solid #d0d7de;
-      border-radius: 8px;
-      background: #f6f8fa;
+      padding: 4px 8px;
+      border: 1px solid #888;
+      border-radius: 6px;
+      background: none;   /* no background */
       color: #24292f;
-      font-size: 0.95rem;
-      font-weight: 600;
+      font-size: 0.8rem;  /* smaller font */
+      font-weight: 500;
       cursor: pointer;
       user-select: none;
     }
-    .btn:hover { background: #eef1f4; }
+    .btn:hover { background: #f3f4f6; }
     .btn:active { transform: translateY(1px); }
-    .btn[aria-pressed="true"] { background: #e7f3ff; border-color: #9ecbff; }
+    .btn[aria-pressed="true"] { border-color: #0366d6; color: #0366d6; }
 
     /* Abstract box */
     .abstract {
-      margin-top: 12px;
-      padding: 12px 14px;
-      border: 2px dashed #b9c0c7;
-      border-radius: 10px;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border: 1px dashed #888;
+      border-radius: 8px;
       background: #fafbfc;
-      display: none; /* hidden by default */
+      display: none;
       white-space: pre-wrap;
+      font-size: 0.9rem;
     }
 
     /* Small screens: stack image above text */
@@ -79,7 +80,6 @@
     <h1>Fatih Erdoğan</h1>
     <p class="tagline">Computer Engineering • Deep Learning • Data</p>
 
-    <!-- Email appears as visible text and is clickable -->
     <div class="email">
       <a href="mailto:fatiherdogan0200@gmail.com">fatiherdogan0200@gmail.com</a>
     </div>
@@ -115,7 +115,7 @@
           <div class="pub-actions">
             <button class="btn" id="abs-btn" type="button" aria-expanded="false" aria-controls="abs-mls">ABS</button>
             <a class="btn" href="https://arxiv.org/abs/2508.21689" target="_blank" rel="noopener">Arxiv</a>
-            <a class="btn" href="papers/mapping_like_skeptic.pdf" target="_blank" rel="noopener">PDF</a>
+            <a class="btn" href="https://arxiv.org/pdf/2409.07456" target="_blank" rel="noopener">PDF</a>
           </div>
 
           <div id="abs-mls" class="abstract" role="region" aria-label="Abstract: Mapping like a Skeptic">
