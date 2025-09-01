@@ -31,8 +31,46 @@
       border-radius: 8px;
       border: 1px solid #ddd;
     }
-    .pub-details {
-      flex: 1;
+    .pub-details { flex: 1; }
+
+    /* Action buttons */
+    .pub-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid #d0d7de;
+      border-radius: 8px;
+      background: #f6f8fa;
+      color: #24292f;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+    }
+    .btn:hover { background: #eef1f4; }
+    .btn:active { transform: translateY(1px); }
+    .btn[aria-pressed="true"] { background: #e7f3ff; border-color: #9ecbff; }
+
+    /* Abstract box */
+    .abstract {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border: 2px dashed #b9c0c7;
+      border-radius: 10px;
+      background: #fafbfc;
+      display: none; /* hidden by default */
+      white-space: pre-wrap;
+    }
+
+    /* Small screens: stack image above text */
+    @media (max-width: 600px) {
+      .pub-item { flex-direction: column; }
+      .pub-item img { max-width: 100%; }
     }
   </style>
 </head>
@@ -66,12 +104,23 @@
 
     <section class="card">
       <h2>Publications</h2>
+
       <div class="pub-item">
         <img src="figs/mapping-like-skeptic.png" alt="Mapping like a Skeptic preview" />
         <div class="pub-details">
           <strong>Mapping like a Skeptic: Probabilistic BEV Projection for Online HD Mapping</strong><br />
           Fatih Erdoğan, Merve Rabia Barın, Fatma Güney<br />
           <em>British Machine Vision Conference (BMVC), 2025</em>
+
+          <div class="pub-actions">
+            <button class="btn" id="abs-btn" type="button" aria-expanded="false" aria-controls="abs-mls">ABS</button>
+            <a class="btn" href="https://arxiv.org/abs/2508.21689" target="_blank" rel="noopener">Arxiv</a>
+            <a class="btn" href="papers/mapping_like_skeptic.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+
+          <div id="abs-mls" class="abstract" role="region" aria-label="Abstract: Mapping like a Skeptic">
+Constructing high-definition (HD) maps from sensory input requires accurately mapping the road elements in image space to the Bird's Eye View (BEV) space. The precision of this mapping directly impacts the quality of the final vectorized HD map. Existing HD mapping approaches outsource the projection to standard mapping techniques, such as attention-based ones. However, these methods struggle with accuracy due to generalization problems, often hallucinating non-existent road elements. Our key idea is to start with a geometric mapping based on camera parameters and adapt it to the scene to extract relevant map information from camera images. To implement this, we propose a novel probabilistic projection mechanism with confidence scores to (i) refine the mapping to better align with the scene and (ii) filter out irrelevant elements that should not influence HD map generation. In addition, we improve temporal processing by using confidence scores to selectively accumulate reliable information over time. Experiments on new splits of the nuScenes and Argoverse2 datasets demonstrate improved performance over state-of-the-art approaches, indicating better generalization. The improvements are particularly pronounced on nuScenes and in the challenging long perception range.
+          </div>
         </div>
       </div>
     </section>
@@ -80,6 +129,20 @@
   <footer>
     © 2025 Fatih Erdoğan · Last update: August 2025
   </footer>
+
+  <script>
+    // Toggle abstract visibility
+    (function () {
+      const btn = document.getElementById('abs-btn');
+      const abs = document.getElementById('abs-mls');
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        btn.setAttribute('aria-pressed', String(!expanded));
+        abs.style.display = expanded ? 'none' : 'block';
+      });
+    })();
+  </script>
 </body>
 </html>
 
